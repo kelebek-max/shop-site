@@ -113,11 +113,7 @@
 }
 
 [data-theme="dark"] .hero {
-  background: linear-gradient(135deg, #1a1a2e 0%, #252545 40%, #2a2540 100%);
-}
-
-[data-theme="dark"] .hero::before {
-  opacity: 0.5;
+  background: transparent;
 }
 
 [data-theme="dark"] .gradient-text {
@@ -158,7 +154,9 @@ html { scroll-behavior: smooth; }
 
 body {
   font-family: 'Inter', -apple-system, sans-serif;
-  background: var(--bg);
+  background: var(--bg) url('hero-bg.jpg') no-repeat top right;
+  background-size: auto 100vh;
+  background-attachment: fixed;
   color: var(--text);
   line-height: 1.6;
 }
@@ -292,7 +290,7 @@ img { max-width: 100%; }
 /* =================== Hero =================== */
 .hero {
   padding: 60px 0 48px;
-  background: linear-gradient(135deg, #c5dff0 0%, #dce8f0 40%, #f0ece4 100%);
+  background: transparent;
   color: var(--text);
   position: relative;
   overflow: hidden;
@@ -300,16 +298,7 @@ img { max-width: 100%; }
 }
 
 .hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: 45%;
-  background: url('hero-bg.jpg') no-repeat center bottom;
-  background-size: contain;
-  pointer-events: none;
-  opacity: 0.9;
+  display: none;
 }
 
 .hero::after {
