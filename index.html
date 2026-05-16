@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AnimeShop — Фигурки, манга и мерч</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Top Bar -->
+<div class="top-bar">
+  <div class="container top-bar-inner">
+    <span><i class="fa-solid fa-truck-fast"></i> Бесплатная доставка от 3000 ₽</span>
+    <span><i class="fa-solid fa-shield-halved"></i> Гарантия подлинности</span>
+    <span><i class="fa-solid fa-rotate-left"></i> Возврат 14 дней</span>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="header">
+  <div class="container header-inner">
+    <a href="#" class="logo">
+      <span class="logo-icon">⛩️</span>
+      <span class="logo-text">Anime<span class="logo-accent">Shop</span></span>
+    </a>
+
+    <nav class="nav">
+      <a href="#" class="nav-link active">Каталог</a>
+      <a href="#" class="nav-link">Фигурки</a>
+      <a href="#" class="nav-link">Манга</a>
+      <a href="#" class="nav-link">Одежда</a>
+      <a href="#" class="nav-link">Аксессуары</a>
+      <a href="#" class="nav-link">Новинки</a>
+    </nav>
+
+    <div class="header-actions">
+      <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" placeholder="Поиск аниме товаров...">
+      </div>
+      <a href="#" class="header-icon" title="Избранное">
+        <i class="fa-regular fa-heart"></i>
+        <span class="badge">3</span>
+      </a>
+      <a href="#" class="header-icon cart-icon" id="cart-toggle" title="Корзина">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span class="badge" id="cart-count">2</span>
+      </a>
+      <a href="#" class="header-icon" title="Профиль">
+        <i class="fa-regular fa-user"></i>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- Hero Banner -->
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="hero-content">
+      <span class="hero-tag">🔥 Хит сезона</span>
+      <h1 class="hero-title">Коллекция<br><span class="hero-accent">Jujutsu Kaisen</span></h1>
+      <p class="hero-desc">Эксклюзивные фигурки, манга и одежда по мотивам самого популярного аниме сезона. Лимитированная коллекция — успей заказать!</p>
+      <div class="hero-buttons">
+        <a href="#" class="btn btn-primary">Смотреть коллекцию</a>
+        <a href="#" class="btn btn-outline">Все новинки</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <div class="hero-card">
+        <div class="hero-card-glow"></div>
+        <div class="hero-card-content">
+          <div class="hero-figure-placeholder">
+            <i class="fa-solid fa-fire-flame-curved"></i>
+          </div>
+          <span class="hero-card-label">Limited Edition</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Categories -->
+<section class="categories">
+  <div class="container">
+    <h2 class="section-title">Категории</h2>
+    <div class="categories-grid">
+      <a href="#" class="category-card">
+        <div class="category-icon"><i class="fa-solid fa-chess-queen"></i></div>
+        <span class="category-name">Фигурки</span>
+        <span class="category-count">248 товаров</span>
+      </a>
+      <a href="#" class="category-card">
+        <div class="category-icon"><i class="fa-solid fa-book-open"></i></div>
+        <span class="category-name">Манга</span>
+        <span class="category-count">512 товаров</span>
+      </a>
+      <a href="#" class="category-card">
+        <div class="category-icon"><i class="fa-solid fa-shirt"></i></div>
+        <span class="category-name">Одежда</span>
+        <span class="category-count">186 товаров</span>
+      </a>
+      <a href="#" class="category-card">
+        <div class="category-icon"><i class="fa-solid fa-hat-wizard"></i></div>
+        <span class="category-name">Косплей</span>
+        <span class="category-count">94 товара</span>
+      </a>
+      <a href="#" class="category-card">
+        <div class="category-icon"><i class="fa-solid fa-mug-hot"></i></div>
+        <span class="category-name">Аксессуары</span>
+        <span class="category-count">320 товаров</span>
+      </a>
+      <a href="#" class="category-card">
+        <div class="category-icon"><i class="fa-solid fa-compact-disc"></i></div>
+        <span class="category-name">Саундтреки</span>
+        <span class="category-count">67 товаров</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Products -->
+<section class="products">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Популярные товары</h2>
+      <div class="product-filters">
+        <button class="filter-btn active" data-filter="all">Все</button>
+        <button class="filter-btn" data-filter="figures">Фигурки</button>
+        <button class="filter-btn" data-filter="manga">Манга</button>
+        <button class="filter-btn" data-filter="clothes">Одежда</button>
+        <button class="filter-btn" data-filter="accessories">Аксессуары</button>
+      </div>
+    </div>
+
+    <div class="products-grid" id="products-grid">
+      <!-- Product 1 -->
+      <div class="product-card" data-category="figures">
+        <div class="product-image">
+          <span class="product-badge hot">Хит</span>
+          <div class="product-placeholder">
+            <i class="fa-solid fa-chess-queen"></i>
+          </div>
+          <div class="product-actions">
+            <button class="product-action-btn" title="В избранное"><i class="fa-regular fa-heart"></i></button>
+            <button class="product-action-btn" title="Быстрый просмотр"><i class="fa-regular fa-eye"></i></button>
+          </div>
+        </div>
+        <div class="product-info">
+          <span class="product-category">Фигурки</span>
+          <h3 class="product-name">Gojo Satoru — Hollow Purple Ver.</h3>
+          <div class="product-rating">
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+            <span class="rating-count">(128)</span>
+          </div>
+          <div class="product-price">
+            <span class="price-current">4 990 ₽</span>
+            <span class="price-old">6 500 ₽</span>
+          </div>
+          <button class="btn btn-cart"><i class="fa-solid fa-cart-plus"></i> В корзину</button>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="product-card" data-category="manga">
+        <div class="product-image">
+          <span class="product-badge new">New</span>
+          <div class="product-placeholder manga-ph">
+            <i class="fa-solid fa-book-open"></i>
+          </div>
+          <div class="product-actions">
+            <button class="product-action-btn"><i class="fa-regular fa-heart"></i></button>
+            <button class="product-action-btn"><i class="fa-regular fa-eye"></i></button>
+          </div>
+        </div>
+        <div class="product-info">
+          <span class="product-category">Манга</span>
+          <h3 class="product-name">Chainsaw Man — Том 1-5 (Бокс-сет)</h3>
+          <div class="product-rating">
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <span class="rating-count">(256)</span>
+          </div>
+          <div class="product-price">
+            <span class="price-current">2 490 ₽</span>
+          </div>
+          <button class="btn btn-cart"><i class="fa-solid fa-cart-plus"></i> В корзину</button>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="product-card" data-category="clothes">
+        <div class="product-image">
+          <div class="product-placeholder clothes-ph">
+            <i class="fa-solid fa-shirt"></i>
+          </div>
+          <div class="product-actions">
+            <button class="product-action-btn"><i class="fa-regular fa-heart"></i></button>
+            <button class="product-action-btn"><i class="fa-regular fa-eye"></i></button>
+          </div>
+        </div>
+        <div class="product-info">
+          <span class="product-category">Одежда</span>
+          <h3 class="product-name">Худи Naruto Shippuden — Акацуки</h3>
+          <div class="product-rating">
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+            </div>
+            <span class="rating-count">(89)</span>
+          </div>
+          <div class="product-price">
+            <span class="price-current">3 200 ₽</span>
+            <span class="price-old">4 000 ₽</span>
+          </div>
+          <button class="btn btn-cart"><i class="fa-solid fa-cart-plus"></i> В корзину</button>
+        </div>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="product-card" data-category="figures">
+        <div class="product-image">
+          <span class="product-badge sale">-30%</span>
+          <div class="product-placeholder">
+            <i class="fa-solid fa-chess-queen"></i>
+          </div>
+          <div class="product-actions">
+            <button class="product-action-btn"><i class="fa-regular fa-heart"></i></button>
+            <button class="product-action-btn"><i class="fa-regular fa-eye"></i></button>
+          </div>
+        </div>
+        <div class="product-info">
+          <span class="product-category">Фигурки</span>
+          <h3 class="product-name">Levi Ackerman — Battle Stance</h3>
+          <div class="product-rating">
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <span class="rating-count">(201)</span>
+          </div>
+          <div class="product-price">
+            <span class="price-current">5 590 ₽</span>
+            <span class="price-old">7 990 ₽</span>
+          </div>
+          <button class="btn btn-cart"><i class="fa-solid fa-cart-plus"></i> В корзину</button>
+        </div>
+      </div>
+
+      <!-- Product 5 -->
+      <div class="product-card" data-category="accessories">
+        <div class="product-image">
+          <div class="product-placeholder acc-ph">
+            <i class="fa-solid fa-mug-hot"></i>
+          </div>
+          <div class="product-actions">
+            <button class="product-action-btn"><i class="fa-regular fa-heart"></i></button>
+            <button class="product-action-btn"><i class="fa-regular fa-eye"></i></button>
+          </div>
+        </div>
+        <div class="product-info">
+          <span class="product-category">Аксессуары</span>
+          <h3 class="product-name">Кружка хамелеон — Death Note</h3>
+          <div class="product-rating">
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+            <span class="rating-count">(74)</span>
+          </div>
+          <div class="product-price">
+            <span class="price-current">890 ₽</span>
+          </div>
+          <button class="btn btn-cart"><i class="fa-solid fa-cart-plus"></i> В корзину</button>
+        </div>
+      </div>
+
+      <!-- Product 6 -->
+      <div class="product-card" data-category="manga">
+        <div class="product-image">
+          <span class="product-badge hot">Хит</span>
+          <div class="product-placeholder manga-ph">
+            <i class="fa-solid fa-book-open"></i>
+          </div>
+          <div class="product-actions">
+            <button class="product-action-btn"><i class="fa-regular fa-heart"></i></button>
+            <button class="product-action-btn"><i class="fa-regular fa-eye"></i></button>
+          </div>
+        </div>
+        <div class="product-info">
+          <span class="product-category">Манга</span>
+          <h3 class="product-name">One Piece — Том 100 (Юбилейное издание)</h3>
+          <div class="product-rating">
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <span class="rating-count">(432)</span>
+          </div>
+          <div class="product-price">
+            <span class="price-current">1 290 ₽</span>
+          </div>
+          <button class="btn btn-cart"><i class="fa-solid fa-cart-plus"></i> В корзину</button>
+        </div>
+      </div>
+
+      <!-- Product 7 -->
+      <div class="product-card" data-category="clothes">
+        <div class="product-image">
+          <span class="product-badge new">New</span>
+          <div class="product-placeholder clothes-ph">
+            <i class="fa-solid fa-shirt"></i>
+          </div>
+          <div class="product-actions">
+            <button class="product-action-btn"><i class="fa-regular fa-heart"></i></button>
+            <button class="product-action-btn"><i class="fa-regular fa-eye"></i></button>
+          </div>
+        </div>
+        <div class="product-info">
+          <span class="product-category">Одежда</span>
+          <h3 class="product-name">Футболка Demon Slayer — Tanjiro</h3>
+          <div class="product-rating">
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+            </div>
+            <span class="rating-count">(56)</span>
+          </div>
+          <div class="product-price">
+            <span class="price-current">1 790 ₽</span>
+          </div>
+          <button class="btn btn-cart"><i class="fa-solid fa-cart-plus"></i> В корзину</button>
+        </div>
+      </div>
+
+      <!-- Product 8 -->
+      <div class="product-card" data-category="accessories">
+        <div class="product-image">
+          <span class="product-badge sale">-20%</span>
+          <div class="product-placeholder acc-ph">
+            <i class="fa-solid fa-hat-wizard"></i>
+          </div>
+          <div class="product-actions">
+            <button class="product-action-btn"><i class="fa-regular fa-heart"></i></button>
+            <button class="product-action-btn"><i class="fa-regular fa-eye"></i></button>
+          </div>
+        </div>
+        <div class="product-info">
+          <span class="product-category">Аксессуары</span>
+          <h3 class="product-name">Повязка Konoha — Наруто</h3>
+          <div class="product-rating">
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <span class="rating-count">(167)</span>
+          </div>
+          <div class="product-price">
+            <span class="price-current">590 ₽</span>
+            <span class="price-old">740 ₽</span>
+          </div>
+          <button class="btn btn-cart"><i class="fa-solid fa-cart-plus"></i> В корзину</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Features -->
+<section class="features">
+  <div class="container">
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fa-solid fa-truck-fast"></i></div>
+        <h3>Быстрая доставка</h3>
+        <p>Доставим за 1-3 дня по всей России. Бесплатно от 3000 ₽</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
+        <h3>100% Оригинал</h3>
+        <p>Только лицензионные товары напрямую из Японии</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fa-solid fa-rotate-left"></i></div>
+        <h3>Лёгкий возврат</h3>
+        <p>14 дней на возврат без вопросов</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fa-solid fa-headset"></i></div>
+        <h3>Поддержка 24/7</h3>
+        <p>Всегда на связи в чате, Telegram и по телефону</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Newsletter -->
+<section class="newsletter">
+  <div class="container newsletter-inner">
+    <div class="newsletter-content">
+      <h2>Подпишись на новинки! 📮</h2>
+      <p>Будь первым, кто узнает о новых поступлениях и скидках</p>
+    </div>
+    <form class="newsletter-form">
+      <input type="email" placeholder="Твой email">
+      <button type="submit" class="btn btn-primary">Подписаться</button>
+    </form>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-col">
+      <a href="#" class="logo footer-logo">
+        <span class="logo-icon">⛩️</span>
+        <span class="logo-text">Anime<span class="logo-accent">Shop</span></span>
+      </a>
+      <p class="footer-desc">Лучший магазин аниме-товаров в России. Фигурки, манга, одежда и аксессуары из любимых аниме.</p>
+      <div class="footer-social">
+        <a href="#"><i class="fa-brands fa-telegram"></i></a>
+        <a href="#"><i class="fa-brands fa-vk"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Каталог</h4>
+      <a href="#">Фигурки</a>
+      <a href="#">Манга</a>
+      <a href="#">Одежда</a>
+      <a href="#">Аксессуары</a>
+      <a href="#">Косплей</a>
+    </div>
+    <div class="footer-col">
+      <h4>Покупателям</h4>
+      <a href="#">Доставка и оплата</a>
+      <a href="#">Возврат</a>
+      <a href="#">Бонусная программа</a>
+      <a href="#">FAQ</a>
+    </div>
+    <div class="footer-col">
+      <h4>Контакты</h4>
+      <a href="#"><i class="fa-solid fa-phone"></i> 8 (800) 555-35-35</a>
+      <a href="#"><i class="fa-solid fa-envelope"></i> info@animeshop.ru</a>
+      <a href="#"><i class="fa-solid fa-location-dot"></i> Москва, ул. Отаку 42</a>
+      <a href="#"><i class="fa-solid fa-clock"></i> Пн-Вс: 10:00 - 22:00</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container footer-bottom-inner">
+      <span>&copy; 2024 AnimeShop. Все права защищены.</span>
+      <div class="payment-icons">
+        <i class="fa-brands fa-cc-visa"></i>
+        <i class="fa-brands fa-cc-mastercard"></i>
+        <i class="fa-brands fa-cc-apple-pay"></i>
+        <i class="fa-brands fa-google-pay"></i>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Cart Sidebar -->
+<div class="cart-overlay" id="cart-overlay"></div>
+<aside class="cart-sidebar" id="cart-sidebar">
+  <div class="cart-header">
+    <h3><i class="fa-solid fa-bag-shopping"></i> Корзина</h3>
+    <button class="cart-close" id="cart-close"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+  <div class="cart-items">
+    <div class="cart-item">
+      <div class="cart-item-img"><i class="fa-solid fa-chess-queen"></i></div>
+      <div class="cart-item-info">
+        <span class="cart-item-name">Gojo Satoru — Hollow Purple</span>
+        <span class="cart-item-price">4 990 ₽</span>
+        <div class="cart-item-qty">
+          <button class="qty-btn">−</button>
+          <span>1</span>
+          <button class="qty-btn">+</button>
+        </div>
+      </div>
+      <button class="cart-item-remove"><i class="fa-solid fa-trash-can"></i></button>
+    </div>
+    <div class="cart-item">
+      <div class="cart-item-img manga-ph"><i class="fa-solid fa-book-open"></i></div>
+      <div class="cart-item-info">
+        <span class="cart-item-name">Chainsaw Man — Том 1-5</span>
+        <span class="cart-item-price">2 490 ₽</span>
+        <div class="cart-item-qty">
+          <button class="qty-btn">−</button>
+          <span>1</span>
+          <button class="qty-btn">+</button>
+        </div>
+      </div>
+      <button class="cart-item-remove"><i class="fa-solid fa-trash-can"></i></button>
+    </div>
+  </div>
+  <div class="cart-footer">
+    <div class="cart-total">
+      <span>Итого:</span>
+      <span class="cart-total-price">7 480 ₽</span>
+    </div>
+    <button class="btn btn-primary btn-checkout">Оформить заказ</button>
+  </div>
+</aside>
+
+<script src="script.js"></script>
+</body>
+</html>

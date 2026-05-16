@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TopPicks — Лучшие товары с маркетплейсов</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+  <div class="container header-inner">
+    <a href="#" class="logo">
+      <span class="logo-icon">🏆</span>
+      <span class="logo-text">Top<span class="logo-accent">Picks</span></span>
+    </a>
+
+    <nav class="nav">
+      <a href="#" class="nav-link active">Все подборки</a>
+      <a href="#" class="nav-link">Электроника</a>
+      <a href="#" class="nav-link">Дом и сад</a>
+      <a href="#" class="nav-link">Красота</a>
+      <a href="#" class="nav-link">Детям</a>
+      <a href="#" class="nav-link">Спорт</a>
+    </nav>
+
+    <div class="header-actions">
+      <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" placeholder="Найти товар или подборку...">
+      </div>
+      <button class="theme-toggle" id="theme-toggle" title="Переключить тему">
+        <i class="fa-solid fa-moon"></i>
+        <i class="fa-solid fa-sun"></i>
+      </button>
+      <a href="#" class="header-icon" title="Избранное">
+        <i class="fa-regular fa-bookmark"></i>
+        <span class="badge">5</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <h1>Лучшие товары<br>с <span class="gradient-text">маркетплейсов</span></h1>
+      <p>Мы анализируем рейтинги, отзывы и цены на Wildberries, Ozon, Яндекс Маркет и других площадках — чтобы вы покупали только лучшее</p>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-number">12 480</span>
+        <span class="stat-label">товаров в подборках</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">2.1 млн</span>
+        <span class="stat-label">проанализированных отзывов</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">6</span>
+        <span class="stat-label">маркетплейсов</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Marketplace Tabs -->
+<section class="marketplaces">
+  <div class="container">
+    <div class="marketplace-tabs">
+      <button class="mp-tab active" data-mp="all">
+        <i class="fa-solid fa-globe"></i> Все площадки
+      </button>
+      <button class="mp-tab" data-mp="wb">
+        <span class="mp-dot wb"></span> Wildberries
+      </button>
+      <button class="mp-tab" data-mp="ozon">
+        <span class="mp-dot ozon"></span> Ozon
+      </button>
+      <button class="mp-tab" data-mp="ym">
+        <span class="mp-dot ym"></span> Яндекс Маркет
+      </button>
+      <button class="mp-tab" data-mp="ali">
+        <span class="mp-dot ali"></span> AliExpress
+      </button>
+      <button class="mp-tab" data-mp="sb">
+        <span class="mp-dot sb"></span> СберМегаМаркет
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Trending Collections -->
+<section class="collections">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">🔥 Популярные подборки</h2>
+      <a href="#" class="see-all">Все подборки <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+    <div class="collections-grid">
+      <a href="#" class="collection-card collection-large">
+        <div class="collection-bg bg-gradient-1"></div>
+        <div class="collection-info">
+          <span class="collection-tag">Топ недели</span>
+          <h3>Лучшие беспроводные наушники 2024</h3>
+          <span class="collection-meta">42 товара · Обновлено сегодня</span>
+        </div>
+      </a>
+      <a href="#" class="collection-card">
+        <div class="collection-bg bg-gradient-2"></div>
+        <div class="collection-info">
+          <span class="collection-tag">Новая подборка</span>
+          <h3>Роботы-пылесосы с лидаром</h3>
+          <span class="collection-meta">28 товаров</span>
+        </div>
+      </a>
+      <a href="#" class="collection-card">
+        <div class="collection-bg bg-gradient-3"></div>
+        <div class="collection-info">
+          <span class="collection-tag">Хит</span>
+          <h3>Уход за кожей: корейская косметика</h3>
+          <span class="collection-meta">65 товаров</span>
+        </div>
+      </a>
+      <a href="#" class="collection-card">
+        <div class="collection-bg bg-gradient-4"></div>
+        <div class="collection-info">
+          <span class="collection-tag">Сезонное</span>
+          <h3>Всё для дачи и огорода</h3>
+          <span class="collection-meta">120 товаров</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Main Products Section -->
+<section class="products-section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Лучшие товары</h2>
+      <div class="controls">
+        <div class="sort-select">
+          <select id="sort-select">
+            <option value="rating">По рейтингу</option>
+            <option value="price-asc">Цена: по возрастанию</option>
+            <option value="price-desc">Цена: по убыванию</option>
+            <option value="reviews">По отзывам</option>
+            <option value="discount">По скидке</option>
+          </select>
+        </div>
+        <div class="view-toggle">
+          <button class="view-btn active" data-view="grid" title="Сетка"><i class="fa-solid fa-grip"></i></button>
+          <button class="view-btn" data-view="list" title="Список"><i class="fa-solid fa-list"></i></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Category Chips -->
+    <div class="category-chips">
+      <button class="chip active" data-cat="all">Все</button>
+      <button class="chip" data-cat="electronics">📱 Электроника</button>
+      <button class="chip" data-cat="home">🏠 Дом и сад</button>
+      <button class="chip" data-cat="beauty">💄 Красота</button>
+      <button class="chip" data-cat="kids">🧸 Детям</button>
+      <button class="chip" data-cat="sport">⚽ Спорт</button>
+      <button class="chip" data-cat="fashion">👗 Одежда</button>
+      <button class="chip" data-cat="food">🍕 Продукты</button>
+    </div>
+
+    <!-- Products Grid -->
+    <div class="products-grid" id="products-grid">
+
+      <!-- Product 1 -->
+      <article class="product-card" data-category="electronics" data-mp="ozon">
+        <div class="product-top">
+          <div class="product-rank">#1</div>
+          <div class="product-badges">
+            <span class="badge-best">Лучший выбор</span>
+          </div>
+          <button class="bookmark-btn" title="В избранное"><i class="fa-regular fa-bookmark"></i></button>
+        </div>
+        <div class="product-image">
+          <div class="product-placeholder electronics-ph">
+            <i class="fa-solid fa-headphones"></i>
+          </div>
+        </div>
+        <div class="product-info">
+          <div class="product-source">
+            <span class="mp-dot ozon"></span>
+            <span>Ozon</span>
+          </div>
+          <h3 class="product-name">Sony WH-1000XM5 — Беспроводные наушники с шумоподавлением</h3>
+          <div class="product-rating">
+            <div class="rating-bar">
+              <div class="rating-fill" style="width: 96%;"></div>
+            </div>
+            <span class="rating-score">4.8</span>
+            <span class="rating-count">2 340 отзывов</span>
+          </div>
+          <div class="product-price-row">
+            <div class="price-info">
+              <span class="price-current">24 990 ₽</span>
+              <span class="price-old">32 990 ₽</span>
+              <span class="discount-tag">-24%</span>
+            </div>
+          </div>
+          <div class="price-comparison">
+            <span class="compare-label">Цены на площадках:</span>
+            <div class="compare-list">
+              <span class="compare-item best"><span class="mp-dot ozon"></span> 24 990 ₽</span>
+              <span class="compare-item"><span class="mp-dot wb"></span> 26 400 ₽</span>
+              <span class="compare-item"><span class="mp-dot ym"></span> 27 990 ₽</span>
+            </div>
+          </div>
+          <a href="#" class="btn-go">Перейти к товару <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+      </article>
+
+      <!-- Product 2 -->
+      <article class="product-card" data-category="home" data-mp="wb">
+        <div class="product-top">
+          <div class="product-rank">#2</div>
+          <div class="product-badges">
+            <span class="badge-popular">Популярный</span>
+          </div>
+          <button class="bookmark-btn"><i class="fa-regular fa-bookmark"></i></button>
+        </div>
+        <div class="product-image">
+          <div class="product-placeholder home-ph">
+            <i class="fa-solid fa-robot"></i>
+          </div>
+        </div>
+        <div class="product-info">
+          <div class="product-source">
+            <span class="mp-dot wb"></span>
+            <span>Wildberries</span>
+          </div>
+          <h3 class="product-name">Dreame L10s Ultra — Робот-пылесос с самоочисткой</h3>
+          <div class="product-rating">
+            <div class="rating-bar">
+              <div class="rating-fill" style="width: 94%;"></div>
+            </div>
+            <span class="rating-score">4.7</span>
+            <span class="rating-count">1 856 отзывов</span>
+          </div>
+          <div class="product-price-row">
+            <div class="price-info">
+              <span class="price-current">38 900 ₽</span>
+              <span class="price-old">52 000 ₽</span>
+              <span class="discount-tag">-25%</span>
+            </div>
+          </div>
+          <div class="price-comparison">
+            <span class="compare-label">Цены на площадках:</span>
+            <div class="compare-list">
+              <span class="compare-item best"><span class="mp-dot wb"></span> 38 900 ₽</span>
+              <span class="compare-item"><span class="mp-dot ozon"></span> 41 200 ₽</span>
+              <span class="compare-item"><span class="mp-dot ym"></span> 43 500 ₽</span>
+            </div>
+          </div>
+          <a href="#" class="btn-go">Перейти к товару <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+      </article>
+
+      <!-- Product 3 -->
+      <article class="product-card" data-category="beauty" data-mp="wb">
+        <div class="product-top">
+          <div class="product-rank">#3</div>
+          <div class="product-badges">
+            <span class="badge-trending">В тренде</span>
+          </div>
+          <button class="bookmark-btn"><i class="fa-regular fa-bookmark"></i></button>
+        </div>
+        <div class="product-image">
+          <div class="product-placeholder beauty-ph">
+            <i class="fa-solid fa-pump-soap"></i>
+          </div>
+        </div>
+        <div class="product-info">
+          <div class="product-source">
+            <span class="mp-dot wb"></span>
+            <span>Wildberries</span>
+          </div>
+          <h3 class="product-name">COSRX Snail Mucin 96% — Сыворотка для лица</h3>
+          <div class="product-rating">
+            <div class="rating-bar">
+              <div class="rating-fill" style="width: 98%;"></div>
+            </div>
+            <span class="rating-score">4.9</span>
+            <span class="rating-count">5 621 отзывов</span>
+          </div>
+          <div class="product-price-row">
+            <div class="price-info">
+              <span class="price-current">1 290 ₽</span>
+              <span class="price-old">1 890 ₽</span>
+              <span class="discount-tag">-32%</span>
+            </div>
+          </div>
+          <div class="price-comparison">
+            <span class="compare-label">Цены на площадках:</span>
+            <div class="compare-list">
+              <span class="compare-item best"><span class="mp-dot wb"></span> 1 290 ₽</span>
+              <span class="compare-item"><span class="mp-dot ozon"></span> 1 450 ₽</span>
+              <span class="compare-item"><span class="mp-dot ali"></span> 980 ₽</span>
+            </div>
+          </div>
+          <a href="#" class="btn-go">Перейти к товару <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+      </article>
+
+      <!-- Product 4 -->
+      <article class="product-card" data-category="electronics" data-mp="ym">
+        <div class="product-top">
+          <div class="product-rank">#4</div>
+          <div class="product-badges">
+            <span class="badge-best">Лучший выбор</span>
+          </div>
+          <button class="bookmark-btn"><i class="fa-regular fa-bookmark"></i></button>
+        </div>
+        <div class="product-image">
+          <div class="product-placeholder electronics-ph">
+            <i class="fa-solid fa-mobile-screen"></i>
+          </div>
+        </div>
+        <div class="product-info">
+          <div class="product-source">
+            <span class="mp-dot ym"></span>
+            <span>Яндекс Маркет</span>
+          </div>
+          <h3 class="product-name">Samsung Galaxy S24 Ultra 256GB — Смартфон</h3>
+          <div class="product-rating">
+            <div class="rating-bar">
+              <div class="rating-fill" style="width: 92%;"></div>
+            </div>
+            <span class="rating-score">4.6</span>
+            <span class="rating-count">3 102 отзывов</span>
+          </div>
+          <div class="product-price-row">
+            <div class="price-info">
+              <span class="price-current">89 990 ₽</span>
+              <span class="price-old">109 990 ₽</span>
+              <span class="discount-tag">-18%</span>
+            </div>
+          </div>
+          <div class="price-comparison">
+            <span class="compare-label">Цены на площадках:</span>
+            <div class="compare-list">
+              <span class="compare-item"><span class="mp-dot wb"></span> 92 300 ₽</span>
+              <span class="compare-item"><span class="mp-dot ozon"></span> 91 500 ₽</span>
+              <span class="compare-item best"><span class="mp-dot ym"></span> 89 990 ₽</span>
+            </div>
+          </div>
+          <a href="#" class="btn-go">Перейти к товару <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+      </article>
+
+      <!-- Product 5 -->
+      <article class="product-card" data-category="kids" data-mp="ozon">
+        <div class="product-top">
+          <div class="product-rank">#5</div>
+          <div class="product-badges">
+            <span class="badge-popular">Популярный</span>
+          </div>
+          <button class="bookmark-btn"><i class="fa-regular fa-bookmark"></i></button>
+        </div>
+        <div class="product-image">
+          <div class="product-placeholder kids-ph">
+            <i class="fa-solid fa-puzzle-piece"></i>
+          </div>
+        </div>
+        <div class="product-info">
+          <div class="product-source">
+            <span class="mp-dot ozon"></span>
+            <span>Ozon</span>
+          </div>
+          <h3 class="product-name">LEGO Technic — Bugatti Chiron 42083</h3>
+          <div class="product-rating">
+            <div class="rating-bar">
+              <div class="rating-fill" style="width: 98%;"></div>
+            </div>
+            <span class="rating-score">4.9</span>
+            <span class="rating-count">876 отзывов</span>
+          </div>
+          <div class="product-price-row">
+            <div class="price-info">
+              <span class="price-current">29 990 ₽</span>
+            </div>
+          </div>
+          <div class="price-comparison">
+            <span class="compare-label">Цены на площадках:</span>
+            <div class="compare-list">
+              <span class="compare-item best"><span class="mp-dot ozon"></span> 29 990 ₽</span>
+              <span class="compare-item"><span class="mp-dot wb"></span> 31 200 ₽</span>
+              <span class="compare-item"><span class="mp-dot ym"></span> 32 990 ₽</span>
+            </div>
+          </div>
+          <a href="#" class="btn-go">Перейти к товару <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+      </article>
+
+      <!-- Product 6 -->
+      <article class="product-card" data-category="sport" data-mp="wb">
+        <div class="product-top">
+          <div class="product-rank">#6</div>
+          <div class="product-badges">
+            <span class="badge-trending">В тренде</span>
+          </div>
+          <button class="bookmark-btn"><i class="fa-regular fa-bookmark"></i></button>
+        </div>
+        <div class="product-image">
+          <div class="product-placeholder sport-ph">
+            <i class="fa-solid fa-dumbbell"></i>
+          </div>
+        </div>
+        <div class="product-info">
+          <div class="product-source">
+            <span class="mp-dot wb"></span>
+            <span>Wildberries</span>
+          </div>
+          <h3 class="product-name">Xiaomi Smart Band 8 — Фитнес-браслет</h3>
+          <div class="product-rating">
+            <div class="rating-bar">
+              <div class="rating-fill" style="width: 90%;"></div>
+            </div>
+            <span class="rating-score">4.5</span>
+            <span class="rating-count">4 210 отзывов</span>
+          </div>
+          <div class="product-price-row">
+            <div class="price-info">
+              <span class="price-current">2 990 ₽</span>
+              <span class="price-old">3 990 ₽</span>
+              <span class="discount-tag">-25%</span>
+            </div>
+          </div>
+          <div class="price-comparison">
+            <span class="compare-label">Цены на площадках:</span>
+            <div class="compare-list">
+              <span class="compare-item best"><span class="mp-dot wb"></span> 2 990 ₽</span>
+              <span class="compare-item"><span class="mp-dot ozon"></span> 3 190 ₽</span>
+              <span class="compare-item"><span class="mp-dot ali"></span> 2 800 ₽</span>
+            </div>
+          </div>
+          <a href="#" class="btn-go">Перейти к товару <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+      </article>
+
+      <!-- Product 7 -->
+      <article class="product-card" data-category="home" data-mp="ozon">
+        <div class="product-top">
+          <div class="product-rank">#7</div>
+          <div class="product-badges">
+            <span class="badge-best">Лучший выбор</span>
+          </div>
+          <button class="bookmark-btn"><i class="fa-regular fa-bookmark"></i></button>
+        </div>
+        <div class="product-image">
+          <div class="product-placeholder home-ph">
+            <i class="fa-solid fa-blender"></i>
+          </div>
+        </div>
+        <div class="product-info">
+          <div class="product-source">
+            <span class="mp-dot ozon"></span>
+            <span>Ozon</span>
+          </div>
+          <h3 class="product-name">KitchenAid Artisan 5KSM175 — Планетарный миксер</h3>
+          <div class="product-rating">
+            <div class="rating-bar">
+              <div class="rating-fill" style="width: 96%;"></div>
+            </div>
+            <span class="rating-score">4.8</span>
+            <span class="rating-count">1 245 отзывов</span>
+          </div>
+          <div class="product-price-row">
+            <div class="price-info">
+              <span class="price-current">42 990 ₽</span>
+              <span class="price-old">54 990 ₽</span>
+              <span class="discount-tag">-22%</span>
+            </div>
+          </div>
+          <div class="price-comparison">
+            <span class="compare-label">Цены на площадках:</span>
+            <div class="compare-list">
+              <span class="compare-item best"><span class="mp-dot ozon"></span> 42 990 ₽</span>
+              <span class="compare-item"><span class="mp-dot ym"></span> 45 900 ₽</span>
+              <span class="compare-item"><span class="mp-dot sb"></span> 47 000 ₽</span>
+            </div>
+          </div>
+          <a href="#" class="btn-go">Перейти к товару <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+      </article>
+
+      <!-- Product 8 -->
+      <article class="product-card" data-category="fashion" data-mp="wb">
+        <div class="product-top">
+          <div class="product-rank">#8</div>
+          <div class="product-badges">
+            <span class="badge-popular">Популярный</span>
+          </div>
+          <button class="bookmark-btn"><i class="fa-regular fa-bookmark"></i></button>
+        </div>
+        <div class="product-image">
+          <div class="product-placeholder fashion-ph">
+            <i class="fa-solid fa-shoe-prints"></i>
+          </div>
+        </div>
+        <div class="product-info">
+          <div class="product-source">
+            <span class="mp-dot wb"></span>
+            <span>Wildberries</span>
+          </div>
+          <h3 class="product-name">New Balance 530 — Кроссовки унисекс</h3>
+          <div class="product-rating">
+            <div class="rating-bar">
+              <div class="rating-fill" style="width: 88%;"></div>
+            </div>
+            <span class="rating-score">4.4</span>
+            <span class="rating-count">6 732 отзывов</span>
+          </div>
+          <div class="product-price-row">
+            <div class="price-info">
+              <span class="price-current">8 990 ₽</span>
+              <span class="price-old">12 990 ₽</span>
+              <span class="discount-tag">-31%</span>
+            </div>
+          </div>
+          <div class="price-comparison">
+            <span class="compare-label">Цены на площадках:</span>
+            <div class="compare-list">
+              <span class="compare-item best"><span class="mp-dot wb"></span> 8 990 ₽</span>
+              <span class="compare-item"><span class="mp-dot ozon"></span> 9 500 ₽</span>
+              <span class="compare-item"><span class="mp-dot ym"></span> 10 290 ₽</span>
+            </div>
+          </div>
+          <a href="#" class="btn-go">Перейти к товару <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+      </article>
+
+      <!-- Product 9 -->
+      <article class="product-card" data-category="electronics" data-mp="ali">
+        <div class="product-top">
+          <div class="product-rank">#9</div>
+          <div class="product-badges">
+            <span class="badge-trending">В тренде</span>
+          </div>
+          <button class="bookmark-btn"><i class="fa-regular fa-bookmark"></i></button>
+        </div>
+        <div class="product-image">
+          <div class="product-placeholder electronics-ph">
+            <i class="fa-solid fa-gamepad"></i>
+          </div>
+        </div>
+        <div class="product-info">
+          <div class="product-source">
+            <span class="mp-dot ali"></span>
+            <span>AliExpress</span>
+          </div>
+          <h3 class="product-name">8BitDo Ultimate — Беспроводной геймпад</h3>
+          <div class="product-rating">
+            <div class="rating-bar">
+              <div class="rating-fill" style="width: 94%;"></div>
+            </div>
+            <span class="rating-score">4.7</span>
+            <span class="rating-count">1 523 отзывов</span>
+          </div>
+          <div class="product-price-row">
+            <div class="price-info">
+              <span class="price-current">4 590 ₽</span>
+              <span class="price-old">5 990 ₽</span>
+              <span class="discount-tag">-23%</span>
+            </div>
+          </div>
+          <div class="price-comparison">
+            <span class="compare-label">Цены на площадках:</span>
+            <div class="compare-list">
+              <span class="compare-item best"><span class="mp-dot ali"></span> 4 590 ₽</span>
+              <span class="compare-item"><span class="mp-dot ozon"></span> 5 200 ₽</span>
+              <span class="compare-item"><span class="mp-dot wb"></span> 5 490 ₽</span>
+            </div>
+          </div>
+          <a href="#" class="btn-go">Перейти к товару <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Load More -->
+    <div class="load-more">
+      <button class="btn btn-outline" id="load-more-btn">Показать ещё <i class="fa-solid fa-chevron-down"></i></button>
+    </div>
+  </div>
+</section>
+
+<!-- How it works -->
+<section class="how-it-works">
+  <div class="container">
+    <h2 class="section-title center">Как мы выбираем лучшие товары</h2>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-number">1</div>
+        <div class="step-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+        <h3>Анализируем</h3>
+        <p>Собираем данные о товарах с 6 крупнейших маркетплейсов России</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">2</div>
+        <div class="step-icon"><i class="fa-solid fa-comments"></i></div>
+        <h3>Читаем отзывы</h3>
+        <p>AI анализирует миллионы отзывов и выделяет плюсы и минусы</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">3</div>
+        <div class="step-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+        <h3>Сравниваем цены</h3>
+        <p>Находим лучшую цену среди всех площадок в реальном времени</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">4</div>
+        <div class="step-icon"><i class="fa-solid fa-trophy"></i></div>
+        <h3>Составляем топ</h3>
+        <p>Формируем рейтинг на основе качества, цены и отзывов</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-col">
+      <a href="#" class="logo footer-logo">
+        <span class="logo-icon">🏆</span>
+        <span class="logo-text">Top<span class="logo-accent">Picks</span></span>
+      </a>
+      <p class="footer-desc">Независимый агрегатор лучших товаров с маркетплейсов. Помогаем выбирать с умом.</p>
+      <div class="footer-social">
+        <a href="#"><i class="fa-brands fa-telegram"></i></a>
+        <a href="#"><i class="fa-brands fa-vk"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Категории</h4>
+      <a href="#">Электроника</a>
+      <a href="#">Дом и сад</a>
+      <a href="#">Красота</a>
+      <a href="#">Детям</a>
+      <a href="#">Спорт</a>
+    </div>
+    <div class="footer-col">
+      <h4>О сервисе</h4>
+      <a href="#">Как мы работаем</a>
+      <a href="#">Методология</a>
+      <a href="#">Партнёрам</a>
+      <a href="#">Контакты</a>
+    </div>
+    <div class="footer-col">
+      <h4>Площадки</h4>
+      <a href="#">Wildberries</a>
+      <a href="#">Ozon</a>
+      <a href="#">Яндекс Маркет</a>
+      <a href="#">AliExpress</a>
+      <a href="#">СберМегаМаркет</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container footer-bottom-inner">
+      <span>&copy; 2024 TopPicks. Все права защищены.</span>
+      <span class="footer-note">Мы не продаём товары напрямую. Все ссылки ведут на официальные маркетплейсы.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
